@@ -13,3 +13,7 @@ def h(inp, channel=None, conn=None):
 @hook.regex("dQw4w9WgXcQ")
 def rickrollProtector(inp):
     return "linked a rick roll, watch out"
+
+@hook.regex("[kK]-[lL]ine")
+def kline(inp):
+    return "http://i.imgur.com/FQjQgyB.jpg"
