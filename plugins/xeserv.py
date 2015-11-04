@@ -14,7 +14,7 @@ def minecraft(pls):
     if data["players"] == None:
         return "fluttershy.yochat.biz has no online players"
 
-    return "fluttershy.yochat.biz has the following players: " + (reduce (lambda x, y: x + " " + y), data["players"])
+    return "fluttershy.yochat.biz has the following players: " + " ".join(data["players"]) 
 
 @hook.command
 def tf2(pls):
