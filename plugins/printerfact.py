@@ -11,6 +11,9 @@ def php_fact(inp):
 
 @hook.regex("(.*) fact$")
 def printerfact(inp, say=None):
+    if len(inp.group(1).split()) != 1:
+        return None
+
     r = requests.get('https://catfacts-api.appspot.com/api/facts?number=1')
     fact = r.json()['facts'][0]
     inp = inp.group(1)
