@@ -21,7 +21,7 @@ class Input(dict):
             if chan == nick:  # PMs don't need prefixes
                 self.say(msg)
             else:
-                self.say(nick + ': ' + msg)
+                self.say('> ' + msg)
 
         def pm(msg, nick=nick):
             conn.msg(nick, msg)
