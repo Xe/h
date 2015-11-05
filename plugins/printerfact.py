@@ -9,12 +9,10 @@ kittenrex = re.compile(re.escape("kitten"), re.IGNORECASE)
 def php_fact(inp):
     return "http://phpsadness.com/sad/" + str(random.randint(0,53))
 
-@hook.regex("(.*) fact$")
+@hook.regex("printer fact$")
+@hook.command
 def printerfact(inp, say=None):
-    if len(inp.group(1).split()) != 1:
-        return "I cowardly refuse to look that up"
-
     r = requests.get('https://catfacts-api.appspot.com/api/facts?number=1')
     fact = r.json()['facts'][0]
-    inp = inp.group(1)
+    inp = "printer"
     return kittenrex.sub("baby "+ inp, regex.sub(inp, fact))

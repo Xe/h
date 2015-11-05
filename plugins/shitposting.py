@@ -17,3 +17,7 @@ def rickrollProtector(inp):
 @hook.regex("[kK]-[lL]ine")
 def kline(inp):
     return "http://i.imgur.com/FQjQgyB.jpg"
+
+@hook.command
+def botsnack(inp):
+    return ":D"
