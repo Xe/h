@@ -153,8 +153,8 @@ class IRC(object):
         thread.start_new_thread(self.conn.run, ())
         self.cmd("NICK", [self.nick])
         self.cmd("USER",
-                 [self.conf.get('user', 'skybot'), "3", "*", self.conf.get('realname',
-                                                                 'Python bot - http://github.com/rmmh/skybot')])
+                 [self.conf.get('user', 'h'), "3", "*", self.conf.get('realname',
+                                                                 'h - https://git.xeserv.us/xena/h')])
         if 'server_password' in self.conf:
             self.cmd("PASS", [self.conf['server_password']])
 
