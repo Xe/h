@@ -4,11 +4,9 @@ from util import hook
 def skeltal(_):
     return "https://www.youtube.com/watch?v=10pqeNBg5d0"
 
-@hook.regex(r"(.*)")
+@hook.regex(r"^([hH])$")
 def h(inp, channel=None, conn=None):
-    inp = inp.group(1)
-    if inp == "h":
-        return "h"
+    return inp.group(1)
 
 @hook.regex("dQw4w9WgXcQ")
 def rickrollProtector(inp):
