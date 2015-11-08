@@ -32,12 +32,6 @@ def rejoin(paraml, conn=None):
             conn.join(paraml[0])
 
 
-# join channels when invited
-@hook.event('INVITE')
-def invite(paraml, conn=None):
-    conn.join(paraml[-1])
-
-
 @hook.event('004')
 def onjoin(paraml, conn=None):
     # identify to services
@@ -65,5 +59,5 @@ def onjoin(paraml, conn=None):
 @hook.regex(r'^\x01VERSION\x01$')
 def version(inp, notice=None):
     ident, rev = get_version()
-    notice('\x01VERSION skybot %s r%d - http://github.com/rmmh/'
-           'skybot/\x01' % (ident, rev))
+    notice('\x01VERSION h %s - https://git.xeserv.us/xena/h'
+           '\x01' % ident)
