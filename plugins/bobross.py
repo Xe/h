@@ -1,6 +1,13 @@
 from util import hook
 from random import choice
-from data.bobross import quotes
+
+import json
+
+quotes = []
+
+with open("./plugins/data/bobross.json", "r") as fin:
+    print fin
+    quotes = json.load(fin)
 
 @hook.regex("^[Bb]ob [Rr]oss fact$")
 @hook.command
