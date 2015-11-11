@@ -1,19 +1,27 @@
 from util import hook
+from ddate.base import DDate
 
 import datetime
 import ponyapi
+
+def get_time(ep):
+    now = datetime.datetime(2006, 1, 1)
+    now = now.now()
+    then = now.fromtimestamp(int(ep[u"air_date"]))
+    td = then-now
+
+    return now, then, td
 
 @hook.command
 def when(inp, say=None):
     #"Shows the countdown to the new episode of My Little Pony: Friendship is Magic!"
 
-    now = datetime.datetime(2006, 1, 1)
-    now = now.now()
     ep = ponyapi.newest()
-    then = now.fromtimestamp(int(ep[u"air_date"]))
-    td = then-now
-
+    now, then, td = get_time(ep)
     seasonep = ""
+
+    if inp == "discord":
+        return "%s will air on %s" % (ep[u"name"], DDate(then))
 
     if ep[u"is_movie"]:
         seasonep = "(a movie)"
