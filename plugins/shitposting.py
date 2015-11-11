@@ -6,7 +6,12 @@ def skeltal(_):
 
 @hook.regex(r"^([hH])(|[?!])$")
 def h(inp, channel=None, conn=None):
-    return inp.group(1) + inp.group(2)
+    suff = ""
+    if inp.group(2) == "?":
+        suff = "!"
+    elif inp.group(2) == "!":
+        suff = "?"
+    return inp.group(1) + suff
 
 @hook.regex("dQw4w9WgXcQ")
 def rickrollProtector(inp):
