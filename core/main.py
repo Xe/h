@@ -1,3 +1,4 @@
+import fuckit
 import thread
 import traceback
 
@@ -60,6 +61,7 @@ class Input(dict):
         self[key] = value
 
 
+@fuckit
 def run(func, input):
     args = func._args
 

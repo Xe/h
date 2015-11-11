@@ -1,6 +1,7 @@
 argparse==1.2.1
 dateandtime==0.0.5
 ddate==0.1.0
+fuckit==4.8.0
 hask==0.0.1
 lxml==3.4.4
 requests==2.8.1
