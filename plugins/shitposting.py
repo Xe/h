@@ -4,7 +4,7 @@ from util import hook
 def skeltal(_):
     return "https://www.youtube.com/watch?v=10pqeNBg5d0"
 
-@hook.regex(r"^([hH])(|[?!]+)$")
+@hook.regex(r"^([hH])([?!]*)$")
 def h(inp, channel=None, conn=None):
     suff = ""
     if inp.group(2).startswith("?"):
