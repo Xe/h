@@ -4,13 +4,13 @@ from util import hook
 def skeltal(_):
     return "https://www.youtube.com/watch?v=10pqeNBg5d0"
 
-@hook.regex(r"^([hH])(|[?!])$")
+@hook.regex(r"^([hH])(|[?!]+)$")
 def h(inp, channel=None, conn=None):
     suff = ""
-    if inp.group(2) == "?":
-        suff = "!"
-    elif inp.group(2) == "!":
-        suff = "?"
+    if inp.group(2).startswith("?"):
+        suff = inp.group(2).replace("?", "!")
+    elif inp.group(2).startswith("!"):
+        suff = inp.group(2).replace("!", "?")
     return inp.group(1) + suff
 
 @hook.regex("dQw4w9WgXcQ")
