@@ -24,3 +24,7 @@ def kline(inp):
 @hook.command
 def botsnack(inp):
     return ":D"
+
+@hook.command
+def debian_init(inp):
+    return "part 1: http://aceattorney.sparklin.org/player.php?trial_id=57684"
