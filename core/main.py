@@ -61,7 +61,7 @@ class Input(dict):
         self[key] = value
 
 
-@fuckit
+#@fuckit
 def run(func, input):
     args = func._args
 
