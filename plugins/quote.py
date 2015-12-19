@@ -67,6 +67,10 @@ def quote(inp, nick='', chan='', db=None, admin=False):
 
     if add:
         quoted_nick, msg = add.groups()
+
+        if quoted_nick == nick:
+            return "You can't add quotes for yourself"
+
         try:
             add_quote(db, chan, quoted_nick, nick, msg)
             db.commit()
