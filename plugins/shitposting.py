@@ -13,6 +13,10 @@ def h(inp, channel=None, conn=None):
         suff = inp.group(2).replace("!", "?")
     return inp.group(1) + suff
 
+@hook.regex(r"^(|press )([xfh]) to pay respects$")
+def pay_respects(inp):
+    return inp.group(2)
+
 @hook.regex("dQw4w9WgXcQ")
 def rickrollProtector(inp):
     return "linked a rick roll, watch out"
