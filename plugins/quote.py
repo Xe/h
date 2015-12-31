@@ -54,6 +54,9 @@ def quote(inp, nick='', chan='', db=None, admin=False):
         "random or [#n]th quote by <nick> or from <#chan>/adds or deletes " \
         "quote"
 
+    if nick.startswith("Kaz"):
+        return None
+
     db.execute("create table if not exists quote"
                "(chan, nick, add_nick, msg, time real, deleted default 0, "
                "primary key (chan, nick, msg))")
