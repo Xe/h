@@ -19,10 +19,6 @@ class Input(dict):
             conn.msg(chan, msg)
 
         def reply(msg):
-            # fuck you you asshole
-            if nick.startswith("Kaz"):
-                return None
-
             if chan == nick:  # PMs don't need prefixes
                 self.say(msg)
             else:
