@@ -32,3 +32,7 @@ def botsnack(inp):
 @hook.command
 def debian_init(inp):
     return "part 1: http://aceattorney.sparklin.org/player.php?trial_id=57684"
+
+@hook.regex("^i kno u r but wat am  i >:P$")
+def gay(inp):
+    return "gay"
